@@ -1,4 +1,4 @@
-inp = input()
+inp = ''.join(input().split())
 bl = True
 
 for i in range(len(inp) // 2):

@@ -3,16 +3,14 @@ seasons = {'winter': [12, 1, 2], 'spring': [3, 4, 5], 'summer': [6, 7, 8], 'autu
 
 def what_season(n):
     try:
-        if int(n) in range(1, 13):
-            for i in range(4):
-                if int(n) in seasons[list(seasons.keys())[i]]:
-                    return f'This month is in {list(seasons.keys())[i]}.'
-                else:
-                    pass
-        else:
-            return 'Not a number of a month.'
+        n = int(n)
     except ValueError:
         return 'Please enter a number.'
+    for season_name, month_ids in seasons.items():
+        if n in month_ids:
+            return f'It\'s {season_name}'
+        else:
+            return 'It\'s not a number of a month.'
 
 
 inp = input()
