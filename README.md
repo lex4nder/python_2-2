@@ -1,5 +1,5 @@
-# python_2-2
-## tasks
+# Python lv 2-2
+## Tasks
 
 This is a repository for the tasks to be checked.
 
