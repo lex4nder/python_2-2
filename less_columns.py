@@ -7,4 +7,3 @@ with open('stage3_test.csv', encoding='utf-8') as csv_file, open('less_columns.c
     reader = csv.DictReader(csv_file)
     for row in reader:
         writer.writerow({'Id': row['Id'], 'Title': row['Title'], 'Price': row['Price']})
-changed.close()
