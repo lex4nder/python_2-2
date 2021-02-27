@@ -6,7 +6,7 @@ conj = 0
 tree = etree.parse('corp.xml')
 root = tree.getroot()
 for token in root.iter('token'):
-    if token.get('text') == 'может' or token.get('text') == 'Может':
+    if token.get('text').lower() == 'может':
         for g in token.iter('g'):
             if g.get('v') == 'VERB':
                 verb += 1
