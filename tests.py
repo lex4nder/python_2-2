@@ -12,6 +12,7 @@ class Test1Class(unittest.TestCase):
         self.assertFalse(s2 >= n1)
         for i in range(-5, 1):
             with self.subTest(i=i):
+                # some failures to be shown
                 self.assertTrue(fs.add(i, 1) > 0)
                 self.assertGreater(s1, s2)
 
@@ -24,8 +25,8 @@ class Test1Class(unittest.TestCase):
     def test_greater_less(self):
         str1, str2 = 'abcd', 'efgh'
         extended = fs.extend_line(str1, str2)
-        self.assertLess(str1, extended)
-        self.assertGreater(extended, str2)
+        self.assertLess(len(str1), len(extended))
+        self.assertGreater(len(extended), len(str2))
 
     def test_equality(self):
         l1, l2 = ['a', 'b', 'c', 'd'], ['d', 'c', 'k']
@@ -37,7 +38,7 @@ class Test2Class(unittest.TestCase):
         fs.new_folder_w_f('C:\\Users\\a.zasypkin\\PycharmProjects\\python_2-2\\test text\\')
 
     def test_the_text(self):
-        with open('test text\\text.txt', 'r') as f:
+        with open('test text\\test.txt', 'r') as f:
             txt = f.read()
             self.assertTrue(len(txt) != 0 and txt == 'some stuff')
 

@@ -20,6 +20,7 @@ def change_common_elements(a, b):
     for i in range(len(a)):
         if a[i] in b:
             a[i] = 0
+    return a
 
 
 def new_folder_w_f(path):
